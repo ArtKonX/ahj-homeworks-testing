@@ -4,15 +4,15 @@ module.exports = {
     coverageDirectory: './coverage',
 
     collectCoverageFrom: [
-      'src/**/*.js',
+        'src/js/**/*.js',
 
-      '!**/__tests__/**',
+        '!**/__tests__/**',
 
-      '!**/__e2e__/**',
+        '!**/__e2e__/**',
 
-      '!**/node_modules/**',
+        '!**/node_modules/**',
     ],
-  };
+};
 
 
-  /** @type {import('jest').Config} */
+/** @type {import('jest').Config} */
