@@ -1,28 +1,42 @@
 import puppetteer from "puppeteer";
+import { fork } from 'child_process';
 
-jest.setTimeout(60000);
+jest.setTimeout(5000);
 
 describe("Credit Card Validator form", () => {
   let browser = null;
   let page = null;
+  let server = null;
+
+  const baseUrl = 'http://localhost:9000';
 
   beforeAll(async () => {
+    server = fork(`${__dirname}/e2e.server.js`);
+    await new Promise((resolve, reject) => {
+      server.on('error', reject);
+      server.on('message', (message) => {
+        if (message === 'ok') {
+          resolve();
+        }
+      });
+    });
+
     browser = await puppetteer.launch({
       // headless: true,
       // slowMo: 250,
-      // devtools: true,
+      // devtools: false,
     });
 
     page = await browser.newPage();
-    await page.goto("http://localhost:9000");
   });
 
   afterAll(async () => {
     await browser.close();
+    server.kill();
   });
 
   test("Тест ввода валидного номера карты", async () => {
-    await page.goto("http://localhost:9000");
+    await page.goto(baseUrl);
 
     await page.type(".validate-input", "5555555555554444");
 
@@ -36,7 +50,7 @@ describe("Credit Card Validator form", () => {
   });
 
   test("Тест ввода невалидного номера карты", async () => {
-    await page.goto("http://localhost:9000");
+    await page.goto(baseUrl);
 
     await page.type(".validate-input", "155555554444");
 
