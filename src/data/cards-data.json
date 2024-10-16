@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "card": "mir",
+        "info": [{"start": [2], "length": [16]}]
+    },
+    {
+        "id": 2,
+        "card": "visa",
+        "info": [{"start": [4], "length": [13, 16, 19]}]
+    },
+    {
+        "id": 3,
+        "card": "mastercard",
+        "info": [{"start": [51, 52, 53, 54, 55], "length": [16]}]
+    },
+    {
+        "id": 4,
+        "card": "american-express",
+        "info": [{"start": [34, 37], "length": [15]}]
+    },
+    {
+        "id": 5,
+        "card": "discover",
+        "info": [{"start": [60, 62, 64, 65], "length": [16, 19]}]
+    },
+    {
+        "id": 6,
+        "card": "jcb",
+        "info": [{"start": [35], "length": [16, 19]}]
+    },
+    {
+        "id": 7,
+        "card": "diners-club",
+        "info": [{"start": [30, 36, 54], "length": [14, 16]}]
+    }
+]

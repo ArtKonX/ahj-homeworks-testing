@@ -1,0 +1,54 @@
+.card {
+    width: 60px;
+    height: 65px;
+    display: block;
+    background-size: cover;
+    background-position: center;
+    margin: 10px;
+}
+
+.cdisabled {
+    opacity: 0.2;
+}
+
+.mir {
+    background-image: url('../../../images/icons8-mir-96.png');
+}
+
+.visa {
+    background-image: url('../../../images/icons8-visa-96.png');
+}
+
+.mastercard {
+    background-image: url('../../../images/icons8-mastercard-96.png');
+}
+
+.american-express {
+    background-image: url('../../../images//icons8-american-express-96.png');
+}
+
+.discover {
+    background-image: url('../../../images/icons8-discover-card-96.png');
+}
+
+.jcb {
+    background-image: url('../../../images/icons8-jcb-96.png');
+}
+
+.diners-club {
+    background-image: url('../../../images/icons8-diners-club-96.png');
+}
+
+.message {
+    font-size: 20px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.invalid::after {
+    content: ' ❌';
+}
+
+.valid::after {
+    content: ' ✅';
+}
