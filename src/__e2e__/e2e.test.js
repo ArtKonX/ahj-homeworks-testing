@@ -1,7 +1,7 @@
 import puppetteer from "puppeteer";
 import { fork } from 'child_process';
 
-jest.setTimeout(5000);
+jest.setTimeout(30000);
 
 describe("Credit Card Validator form", () => {
   let browser = null;
@@ -22,9 +22,9 @@ describe("Credit Card Validator form", () => {
     });
 
     browser = await puppetteer.launch({
-      // headless: true,
-      // slowMo: 250,
-      // devtools: false,
+      headless: false,
+      slowMo: 250,
+      devtools: false,
     });
 
     page = await browser.newPage();
